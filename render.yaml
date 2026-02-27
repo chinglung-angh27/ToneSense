@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tonesense
+    runtime: python
+    rootDir: backend
+    buildCommand: |
+      pip install -r requirements.txt &&
+      cd ../frontend && npm install && npm run build && cd ../backend &&
+      rm -rf static && cp -r ../frontend/dist static
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

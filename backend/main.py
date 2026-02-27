@@ -6,13 +6,15 @@ import io
 import base64
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import cv2
 import numpy as np
 from PIL import Image
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from analysis.face_detection import FaceDetector
 from analysis.color_extraction import ColorExtractor
@@ -20,6 +22,8 @@ from analysis.tone_classifier import ToneClassifier
 from analysis.seasonal_palette import SeasonalPaletteClassifier
 
 logger = logging.getLogger("tonesense")
+
+STATIC_DIR = Path(__file__).parent / "static"
 
 # ── Shared singleton instances ────────────────────────────────
 face_detector: FaceDetector | None = None
@@ -238,3 +242,17 @@ async def analyze_base64(body: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+
+# ── Serve React frontend (must be registered LAST) ────────────
+# Only mount if the static folder exists (i.e. after `npm run build`)
+if STATIC_DIR.exists():
+    app.mount("/assets", StaticFiles(directory=STATIC_DIR / "assets"), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa(full_path: str):
+        """Catch-all: return index.html for any non-API route (SPA routing)."""
+        index = STATIC_DIR / "index.html"
+        if index.exists():
+            return FileResponse(index)
+        return JSONResponse({"error": "Frontend not built. Run: npm run build"}, status_code=404)
