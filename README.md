@@ -13,7 +13,6 @@
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-FF6F00)](https://developers.google.com/mediapipe)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80_Live_Demo-tonesense.onrender.com-46E3B7?logo=render&logoColor=black)](https://tonesense.onrender.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Features](#-features) · [How It Works](#-how-it-works) · [Quick Start](#-quick-start) · [API](#-api) · [Deploy](#-deploy-your-own)
 
@@ -28,8 +27,6 @@
 Professional color analysis costs **$150–$400 per session** with a stylist. ToneSense gives you a full 12-season analysis in **under 10 seconds** — free, private, from your webcam.
 
 No sign-up. No photo storage. Just point, snap, and discover whether you're a True Summer, Deep Winter, or something in between.
-
-> **🌐 Live at [tonesense.onrender.com](https://tonesense.onrender.com)**
 
 ## ✨ Features
 
@@ -106,7 +103,7 @@ Open [http://localhost:5173](http://localhost:5173) — Vite proxies `/api` to t
 
 ```bash
 docker compose up --build
-# App: http://localhost:3000 · API docs: http://localhost:8000/docs
+# App: http://localhost:8000 · API docs: http://localhost:8000/docs
 ```
 
 ## 🔌 API
