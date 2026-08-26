@@ -12,9 +12,12 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-FF6F00)](https://developers.google.com/mediapipe)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Deployed on Render](https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=black)](https://render.com)
+[![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80_Live_Demo-tonesense.onrender.com-46E3B7?logo=render&logoColor=black)](https://tonesense.onrender.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Features](#-features) · [How It Works](#-how-it-works) · [Quick Start](#-quick-start) · [API](#-api) · [Deploy](#-deploy-your-own)
+
+**🎯 Try it now: [https://tonesense.onrender.com](https://tonesense.onrender.com)** — no sign-up, runs free-tier, first load may take ~30s while the server wakes up.
 
 </div>
 
@@ -25,6 +28,8 @@
 Professional color analysis costs **$150–$400 per session** with a stylist. ToneSense gives you a full 12-season analysis in **under 10 seconds** — free, private, from your webcam.
 
 No sign-up. No photo storage. Just point, snap, and discover whether you're a True Summer, Deep Winter, or something in between.
+
+> **🌐 Live at [tonesense.onrender.com](https://tonesense.onrender.com)**
 
 ## ✨ Features
 
@@ -161,7 +166,7 @@ ToneSense/
 
 ## ☁️ Deploy Your Own
 
-**Render (easiest):** Connect this repo, and the included `render.yaml` handles everything — builds the frontend, bundles it into the FastAPI service, and deploys as a single Docker web service.
+**Render (easiest):** Connect this repo, and the included `render.yaml` handles everything — builds the frontend, bundles it into the FastAPI service, and deploys as a single Docker web service. This is exactly how [tonesense.onrender.com](https://tonesense.onrender.com) is deployed — free tier included (server sleeps after 15 min idle; first request takes ~30s to wake).
 
 **Docker anywhere:**
 
