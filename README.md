@@ -15,6 +15,18 @@
 - **Dark Mode** — Full dark/light theme support
 - **Privacy-First** — No images stored; processing happens on-demand only
 
+## Screenshots
+
+| Screen | Description |
+|--------|-------------|
+| ![Hero](screenshots/hero.png) | Landing page — choose camera or upload |
+| ![Camera](screenshots/camera.png) | Live camera capture with face overlay |
+| ![Results](screenshots/results.png) | Full analysis results with seasonal palette |
+| ![Dark](screenshots/dark-mode.png) | Dark mode variant |
+
+> **Add your screenshots:** Save images to `screenshots/` folder and they'll auto-render above.
+> Recommended: 1280×720 PNG, named exactly as in the table.
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -127,6 +139,12 @@ docker-compose up --build
 - Camera access requires explicit consent via a modal dialog
 - All processing is done server-side in memory, with no disk persistence
 - Images are discarded immediately after analysis
+
+## Deploy to Render
+
+1. Connect this repo to Render
+2. Use the included `render.yaml` — it builds frontend → bundles into backend → deploys as single web service
+3. Set `PYTHON_VERSION: 3.11.0` in environment
 
 ## License
 
