@@ -12,9 +12,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# System deps for OpenCV / MediaPipe
+# System deps for OpenCV / MediaPipe (libEGL, libGL, etc.)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1 libglib2.0-0 curl && \
+    libgl1 libglib2.0-0 libegl1 libgles2 libglvnd0 libx11-6 libxcb1 libxext6 \
+    libxfixes3 libxi6 libxrender1 libxxf86vm1 curl && \
     rm -rf /var/lib/apt/lists/*
 
 # Python deps
